@@ -1,1 +1,1 @@
-web: gunicorn mcat2.wsgi --log-file -
+web: gunicorn MCAT2.wsgi --log-file -
