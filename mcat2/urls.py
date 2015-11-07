@@ -15,7 +15,17 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from mcat2.views import LoginView
+
+
+admin.autodiscover()
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+
+    url(r'^$', LoginView.as_view(), name='landing'),   
+
+    url(r'^main/', include('main.urls')),
+
+    # url(r'', include('django.contrib.flatpages.urls')),
 ]
