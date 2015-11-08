@@ -20,3 +20,8 @@ class MediaDetailView(TemplateView):
 
 class DashBoardView(TemplateView):
     template_name = "main/dashboard.html"
+
+
+
+class TweetListView(TemplateView):
+    template_name = "main/contentlist.html"
