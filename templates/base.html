@@ -38,14 +38,13 @@
 
     <div id="wrapper">
     
-        {% if request.user.is_authenticated %}
-          
-                {% block content %}Welcome{% endblock %}
-        {% else %}
-
         <h1>Welcome to MCAT 2.0</h1>                
+          
+        {% block content %}Welcome{% endblock %}
 
-        {% endif %}
+
+
+
             
   
     </div>
