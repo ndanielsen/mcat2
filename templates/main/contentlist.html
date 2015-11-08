@@ -1,10 +1,42 @@
 {% extends "base.html" %}
 
-
-
     {% block content %}
         {% include 'sidebar.html' %}
 
-        contentlist.html
+<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+
+<div class="container">
+  <h2>Media Content to Review</h2>       
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Review</th>
+        <th>Author</th>
+        <th>Outlet</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+            {% for content in object_list %}
+        <tr>
+            <td> {{ content.title }} </td>
+
+            <td> {{ content.pk }} </td>
+
+            <td> Author </td>   
+            <td> Outlet </td>
+            <td> {{ content.date|default:""  }} </td>           
+
+        </tr>
+            {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+
+
+              
+            
 
     {% endblock %}

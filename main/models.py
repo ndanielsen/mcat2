@@ -2,9 +2,8 @@ from django.db import models
 
 # Create your models here.
 
-
-
 class Content(models.Model):
+    date = models.CharField(max_length=200, null=True, blank=True)
     title = models.CharField(max_length=200)
     text = models.TextField()
 

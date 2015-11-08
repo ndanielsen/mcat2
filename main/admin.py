@@ -1,3 +1,7 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Content, Twitter, Outlet, Author, Annotation
+
+@admin.register(Content, Twitter, Outlet, Author, Annotation)
+class PersonAdmin(admin.ModelAdmin):
+    pass

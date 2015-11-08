@@ -21,11 +21,16 @@ from mcat2.views import LoginView
 admin.autodiscover()
 
 urlpatterns = [
+    
+    url(r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/', include(admin.site.urls)),
 
     url(r'^$', LoginView.as_view(), name='landing'),   
 
     url(r'^main/', include('main.urls')),
 
+    url('', include('social.apps.django_app.urls', namespace='social'),
+
+
     # url(r'', include('django.contrib.flatpages.urls')),
-]
+)]

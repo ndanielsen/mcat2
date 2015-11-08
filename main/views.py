@@ -2,6 +2,10 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.views.generic import TemplateView
+from django.views.generic import ListView
+
+from .models import Content, Twitter, Outlet, Author, Annotation
+
 
 class HomeView(TemplateView):
     """
@@ -10,8 +14,9 @@ class HomeView(TemplateView):
     template_name = "main/home.html"
 
 
-class ContentListView(TemplateView):
+class ContentListView(ListView):
     template_name = "main/contentlist.html"
+    model = Content
 
 
 class MediaDetailView(TemplateView):
